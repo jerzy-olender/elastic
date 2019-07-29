@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <nav id="my_navbar" class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#"><img class="navbar-img" src="assets/img/Circle.png"
+                        alt="navbar logo">pluto</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#" id="about">Oferta</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="contact">Kontakt</a>
+                        </li>
+                        <!--<li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Języki
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Język polski</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Język angielski</a>
+                            </div>
+                        </li>-->
+
+                        <li class="nav-item">
+                            <select class="nav-link"  id="change_lang">
+                                <option value="pl" selected>Polski</option>
+                                <option value="en">English</option>
+                            </select>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+    </div>
+
+
+    <section class="steps">
+        <div class="container">
+            <div class="row">
+                <div class="step active w-100" data-step="1">
+                    <div class="container">
+                        <div class="row">
+                            <div class="our_service_item col-md-4">
+                                <h2></h2>
+                                <div class="euro_wrapper">
+                                    <span class="euro_price"></span>
+                                    <span>Euro</span>
+                                </div>
+                                <div class="zl_wrapper">
+                                    <span class="price"></span>
+                                    <span>zł</span>
+                                </div>
+                                <ul class="description"></ul>
+                                <button id="button1" onclick="showStep(this,2)">Wybierz</button>
+                            </div>
+                            <div class="our_service_item col-md-4">
+                                <h2></h2>
+                                <div class="euro_wrapper">
+                                    <span class="euro_price"></span>
+                                    <span>Euro</span>
+                                </div>
+                                <div class="zl_wrapper">
+                                    <span class="price"></span>
+                                    <span>zł</span>
+                                </div>
+                                <ul class="description"></ul>
+                                <button id="button2" onclick="showStep(this,2)">Wybierz</button>
+                            </div>
+                            <div class="our_service_item col-md-4">
+                                <h2></h2>
+                                <div class="euro_wrapper">
+                                    <span class="euro_price"></span>
+                                    <span>Euro</span>
+                                </div>
+                                <div class="zl_wrapper">
+                                    <span class="price"></span>
+                                    <span>zł</span>
+                                </div>
+                                <ul class="description"></ul>
+                                <button id="button3" onclick="showStep(this,2)">Wybierz</button>
+                            </div>
+                            <div class="offer-loader" id="offer_loader">
+                                <span class="fas fa-spinner fa-spin"></span>
+                                <div id="load_offer">Trwa ładowanie ofert</div>
+                            </div>
+                            <input type="hidden" name="offer_id" />
+                        </div>
+                    </div>
+                </div>
+                <div class="step data-step" data-step="2">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 step2_item">
+                                <label id="name" for="fname">Podaj imię</label><br>
+                                <input type="text" name="fname" />
+                            </div>
+                            <div class="col-md-3 step2_item">
+                                <label id="surname" for="lname">Podaj nazwisko</label><br>
+                                <input type="text" name="lname" />
+                            </div>
+                            <div class="col-md-3 step2_item">
+                                <label id="email" for="email">Podaj email</label><br>
+                                <input type="email" name="email" />
+                            </div>
+                            <div class="col-md-3 step2_item">
+                                <label id="tel" for="tel">Podaj telefon</label><br>
+                                <input type="tel" name="phone" />
+                            </div>
+                            <div class="col-12">
+                                <button id="button4" onclick="showStep(this,1)">Powrót</button>
+                                <button id="button5" onclick="showStep(this,3)">Dalej</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 step3_item">
+                                <div id="choosen_product">Wybrany produkt</div>
+                                <h2></h2>
+                                <p id="step3_zl">Cena w zł</p>
+                                <p class="price"></p>
+                                <p id="step3_euro">Cena w euro</p>
+                                <p class="price_euro"></p>
+                            </div>
+                            <div class="col-md-3 step2_item">
+                                <label><input type="radio" name="currency" value="pln" /> <span id="in_zl">Płatność w
+                                        zlotówkach</span></label>
+                                <label><input type="radio" name="currency" value="eur" /> <span id="in_euro">Płatność w
+                                        euro</span></label>
+                            </div>
+                            <div class="col-md-3 step2_item">
+                                <label><input type="radio" name="payment_type" value="fast_payment" /> <span id="payment_fast">Szybki
+                                        przelew</span></label>
+                                <label><input type="radio" name="payment_type" value="traditional_payment" />
+                                    <span id="payment_normal">Przelew
+                                        tradycyjny</span></label>
+                            </div>
+                            <div class="col-12">
+                                <button id="button6" onclick="showStep(this,2)">Powrót</button>
+                                <button id="make_order">Zamów</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="my_footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="footer_wrapper d-flex align-items-center"><img class="logo_footer mr10"
+                            src="assets/img/Logo_footer.png" alt="logo footer">
+                        <h2 class="footer_heading">pluto
+                        </h2>
+                    </div>
+                    <p class="footer_text1">Made with love by kripalser<br>© 2013</p>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <span class="section_span mb30 d-block">contact us
+                    </span>
+                    <p class="footer_text2 mb20">hello@example.com</p>
+                    <p class="footer_text3 mb20">
+                        121 King Street, Melbourne
+                        Victoria 3000 Australia
+                    </p>
+                    <p class="footer_text3">
+                        Phone: +61 3 8376 6284
+                    </p>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <span class="section_span mb30 d-block">recent tweet
+                    </span>
+                    <p class="footer_text4 mb10">
+                        december 3
+                    </p>
+                    <p class="footer_text3">
+                        Testing 1, 2, 3. We've just launched version 1 of our new Envato Marketplaces Hub! Let us know
+                        what you think :) <span class="orange">http://envatomarketplaces.com</span>
+                    </p>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <span class="section_span mb30 d-block">photostream
+                    </span>
+                    <div class="stream_wrapper d-flex justify-content-between">
+                        <img class="footer_image" src="assets/img/footer_image.png" alt="footer img">
+                        <img class="footer_image" src="assets/img/footer_image.png" alt="footer img">
+                        <img class="footer_image" src="assets/img/footer_image.png" alt="footer img">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="fas fa-chevron-up circle_fixed d-flex justify-content-center align-items-center"
+            href="#my_navbar"></a>
+    </footer>
+    <script src="project.js">
+    </script>
+    <script src="lang.js"></script>
+
+</body>
+
+</html>
